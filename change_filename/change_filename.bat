@@ -2,7 +2,8 @@
 cd /d %~dp0
 
 setlocal enabledelayedexpansion
-set move_to=moveTo
+set move_to=changed
+set /A file_counter=1
 for /F %%A in ('dir /B') do (  
     rem echo fullpath
     rem =の両脇のスペースは削除。エラーの原因になる
@@ -18,7 +19,10 @@ for /F %%A in ('dir /B') do (
         echo "this is to direcoty"
     ) else (
         echo "this is target file"
-        move !name! !move_to! 
+        echo !file_counter!
+        echo !CD!\!move_to!\!file_counter!
+        move !name! !CD!\!move_to!\!file_counter!
+        set /A file_counter+=1
     )
 )  
 endlocal
