@@ -9,11 +9,10 @@ for /F %%A in ('dir /B') do (
     echo !name!
 
     rem ファイル名にダブルクオーテーションをつけることでファイル名の一致を判断
-    echo %~nx0
     if  "!name!" == "%~nx0" (
-        echo "this is is_this.bat"
+        echo "this is used bat"
     ) else (
-        echo "this is not is_this.bat"
+        echo "this is not used bat "
     )
 )  
 endlocal
