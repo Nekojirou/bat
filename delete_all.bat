@@ -86,7 +86,6 @@ rem 自分自身を削除する(isRootの場合のみ)
 if !isRoot!==1 (
     echo "delete own directory"
     !CD!
-    pause
     cd ../ 
     rmdir /s /q "%~dp0"
 )
