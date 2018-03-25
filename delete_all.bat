@@ -66,7 +66,6 @@ for /F  "delims=:" %%A in ('dir /B') do (
             del /Q !CD!%%A
         ) else (
             echo "this is batch"
-            pause
         )
     ) else (
         echo "delete directory"
